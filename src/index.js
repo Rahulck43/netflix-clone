@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./App.css" 
+import { trendingUrl,upcomingUrl } from './URLs'; 
+
+import NavBar from './Components/NavBar/navBar';
+import Banner from './Components/Banner/Banner';
+import Poster from './Components/Posters/Poster';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <NavBar/>
+    <Banner/>
+    <Poster url={trendingUrl} title="Trending Movies Of The Week"/>
+    <Poster url={upcomingUrl} title="Upcoming movies" isSmall/>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
